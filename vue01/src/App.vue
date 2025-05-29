@@ -1,8 +1,13 @@
-<script setup>
-
-</script>
-
 <template>
-  <h1>hellow</h1>
+  <h1>{{ message }}</h1>
 </template>
-
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      message: 'Hello, Vue!',
+    };
+  },
+};
+</script>
