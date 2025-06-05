@@ -19,8 +19,13 @@
     v-if="모달창열렸니"
   >
     <div class="white-bg">
-      <h4>상세페이지</h4>
-      <p>상세페이지내용임</p>
+      <img
+        :src="원룸들[누른거].image"
+        alt=""
+        class="room-img"
+      />
+      <h4>{{ 원룸들[누른거].title }}</h4>
+      <p>{{ 원룸들[누른거].content }}</p>
       <button @click="모달창열렸니 = false">닫기</button>
     </div>
   </div>
@@ -43,6 +48,14 @@
       />
       <p>{{ 원룸.title }}</p>
       <p>{{ 원룸.price }} 원</p>
+      <a
+        href="javascript:;"
+        @click="
+          모달창열렸니 = true;
+          누른거 = idx;
+        "
+        >해당 상품 열기</a
+      >
     </div>
   </div>
   <!-- =================== 상품 리스트 =================== -->
@@ -57,6 +70,7 @@ export default {
       메뉴들: ['Home', 'Products', 'About'],
       모달창열렸니: false,
       원룸들: oneroom,
+      누른거: 0,
     };
   },
 };
