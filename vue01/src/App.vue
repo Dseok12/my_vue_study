@@ -13,55 +13,25 @@
   </div>
   <!-- =================== 메뉴 =================== -->
 
-  <!-- =================== 모달창 =================== -->
-  <div
-    class="black-bg"
-    v-if="모달창열렸니"
-  >
-    <div class="white-bg">
-      <img
-        :src="원룸들[누른거].image"
-        alt=""
-        class="room-img"
-      />
-      <h4>{{ 원룸들[누른거].title }}</h4>
-      <p>{{ 원룸들[누른거].content }}</p>
-      <button @click="모달창열렸니 = false">닫기</button>
-    </div>
-  </div>
-  <!-- =================== 모달창 =================== -->
+  <Discount />
+
+  <Modal :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
 
   <!-- =================== 상품 리스트 =================== -->
-  <div
+
+  <Card 
     v-for="(원룸, idx) in 원룸들"
     :key="idx"
-    class="room-list"
-  >
-    <div
-      class="room-item"
-      @click="모달창열렸니 = true"
-    >
-      <img
-        :src="원룸.image"
-        alt=""
-        class="room-img"
-      />
-      <p>{{ 원룸.title }}</p>
-      <p>{{ 원룸.price }} 원</p>
-      <a
-        href="javascript:;"
-        @click="
-          모달창열렸니 = true;
-          누른거 = idx;
-        "
-        >해당 상품 열기</a
-      >
-    </div>
-  </div>
+    :원룸들="원룸들"
+  />
+
   <!-- =================== 상품 리스트 =================== -->
 </template>
 <script>
 import { oneroom } from './assets/oneroom.js';
+import Discount from './Discount.vue';
+import Modal from './Modal.vue';
+import Card from './Card.vue';
 
 export default {
   name: 'App',
@@ -73,6 +43,11 @@ export default {
       누른거: 0,
     };
   },
+  components: {
+    Discount,
+    Modal,
+    Card,
+  }
 };
 </script>
 <style>

@@ -192,3 +192,9 @@
     border-radius: 8px;
   }
 }
+
+.discount {width: 100%; text-align: center;padding: 10px 0;
+  background: linear-gradient(90deg, #f6e58d 0%, #341f97 100%);
+  color: #fff; font-weight: 600; font-size: 1.1rem; margin-top: 16px;
+  box-shadow: 0 4px 18px rgba(72, 52, 212, 0.12);
+}
