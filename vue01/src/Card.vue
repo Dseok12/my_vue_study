@@ -27,8 +27,13 @@
 </template>
 <script>
 export default {
-    name: "Card",
-    
+  name: "Card",
+  props: {
+    원룸: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 <style>
