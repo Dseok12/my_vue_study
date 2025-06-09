@@ -2,6 +2,7 @@
   <div
     class="black-bg"
     v-if="모달창열렸니"
+     @click="$emit('모달창닫아라')"
   >
     <div class="white-bg">
       <img
@@ -11,7 +12,7 @@
       />
       <h4>{{ 원룸들[누른거].title }}</h4>
       <p>{{ 원룸들[누른거].content }}</p>
-      <!-- <button @click="모달창열렸니 = false">닫기</button> -->
+      <button @click="$emit('모달창닫아라')">닫기</button>
     </div>
   </div>
 </template>

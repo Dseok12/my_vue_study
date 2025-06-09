@@ -1,11 +1,10 @@
 <template>
   <div
-
     class="room-list"
   >
     <div
       class="room-item"
-      
+      @click="$emit('열려라모달')"  
     >
       <img
         :src="원룸.image"
