@@ -4,7 +4,7 @@
   >
     <div
       class="room-item"
-      @click="$emit('열려라모달')"  
+      @click="fncOpenModal"  
     >
       <img
         :src="원룸.image"
@@ -13,14 +13,10 @@
       />
       <p>{{ 원룸.title }}</p>
       <p>{{ 원룸.price }} 원</p>
-      <!-- <a
+      <a
         href="javascript:;"
-        @click="
-          모달창열렸니 = true;
-          누른거 = idx;
-        "
-        >해당 상품 열기</a
-      > -->
+      >해당 상품 열기</a
+      >
     </div>
   </div>
 </template>
@@ -30,7 +26,11 @@ export default {
   props: {
     원룸: {
       type: Object,
-      required: true
+    }
+  },
+  methods: {
+    fncOpenModal() {
+      this.$emit('열려라모달', this.원룸)
     }
   }
 }
