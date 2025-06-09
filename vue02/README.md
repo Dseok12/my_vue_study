@@ -37,7 +37,7 @@ export default {
 
 data()에 있는 "부모메뉴들"은 자식 컴포넌트에 넘겨줘야할 값이다. <br/>
 
-이것을 내가 이해한 내용으로 설명을 하면, <i>자바스트립트의 변수 만들기</i>와 같다고 보면 된다.<br/>
+이것을 내가 이해한 내용으로 설명을 하면, <b><u><i>자바스트립트의 변수 만들기</i></u></b>와 같다고 보면 된다.<br/>
 
 ```javascript
 let 메뉴들 = 부모메뉴들
@@ -80,4 +80,4 @@ export default {
 
 부모컴포넌트에서 받은 변수인 "메뉴들"을 props객체에 등록을 한다.<br/>
 
-그리고 위의 <i>&lt;li v-for="(메뉴, idx) in 메뉴들" :key="idx" class="MainMenu--item"&gt;</i>와 같이 사용하면 된다.
+그리고 위의 <b><i>&lt;li v-for="(메뉴, idx) in 메뉴들" :key="idx" class="MainMenu--item"&gt;</i></b>와 같이 사용하면 된다.
