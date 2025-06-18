@@ -13,7 +13,10 @@
   </div>
   <!-- =================== 메뉴 =================== -->
 
-  <Discount />
+  <Discount v-if="showDiscount == true" />
+
+  <button @click="가격순정렬">가격순 정렬</button>
+  <button @click="되돌리기">되돌리기</button>
 
   <!-- <div class="start" :class="{ end: 모달창열렸니 }">
     <Modal :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" @모달창닫아라 = "모달창열렸니 = false" />
@@ -43,11 +46,27 @@ export default {
   name: 'App',
   data() {
     return {
+      showDiscount : true,
+      원룸들오리지널 : [...oneroom],
       메뉴들: ['Home', 'Products', 'About'],
       모달창열렸니: false,
       원룸들: oneroom,
       누른거: 0,
     };
+  },
+  methods: {
+    // 가격순 정렬 메소드
+    가격순정렬() {
+      this.원룸들.sort((a, b) => a.price - b.price);
+    },
+    되돌리기() {
+      this.원룸들 = [...this.원룸들오리지널]
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showDiscount = false;
+    }, 2000);
   },
   components: {
     Discount,

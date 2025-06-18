@@ -39,6 +39,12 @@ export default {
         }
       }
     },
+    beforeUpdate() {
+      if(this.month < 2){
+        alert('최소 2개월 이상 선택해주세요.');
+        this.month = 2;
+      }
+    },
     props: {
       원룸들: {
         type: Array,
