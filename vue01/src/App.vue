@@ -15,8 +15,10 @@
 
   <Discount v-if="showDiscount == true" />
 
-  <button @click="가격순정렬">가격순 정렬</button>
-  <button @click="되돌리기">되돌리기</button>
+  <div class="btn--box">
+    <button @click="가격순정렬">가격순 정렬</button>
+    <button @click="되돌리기">되돌리기</button>
+  </div>
 
   <!-- <div class="start" :class="{ end: 모달창열렸니 }">
     <Modal :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" @모달창닫아라 = "모달창열렸니 = false" />

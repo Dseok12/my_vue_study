@@ -210,3 +210,6 @@
 .fade-leave-from{opacity: 1;}
 .fade-leave-active{transition: all 1s;}
 .fade-leave-to{opacity: 0;}
+
+.btn--box{display: flex;justify-content: center;gap: 16px;margin-top: 20px;}
+.btn--box button {padding: 10px 20px;background: linear-gradient(90deg, #4834d4 0%, #341f97 100%);color: #fff;border: none;border-radius: 8px;font-weight: 600;font-size: 1rem;cursor: pointer;transition: background 0.22s, color 0.22s;}
