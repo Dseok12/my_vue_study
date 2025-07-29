@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :게시물="게시물" />
+  <Container :넘겨게시물="게시물들" />
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      게시물: postData
+      게시물들: postData
     };
   },
 }

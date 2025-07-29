@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Post :게시물="게시물[i]" v-for="(a,i) in 게시물" :key="i" />
+    <Post :또넘겨게시물="넘겨게시물[i]" v-for="(a,i) in 넘겨게시물" :key="i" />
   </div>
 </template>
 <script>
@@ -11,9 +11,8 @@
       Post
     },
     props: {
-      게시물: {
+      넘겨게시물: {
         type: Array,
-        default: () => []
       }
     },
   }
