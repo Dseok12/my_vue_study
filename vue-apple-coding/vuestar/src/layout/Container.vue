@@ -1,9 +1,6 @@
 <template>
   <div>
-    <Post />
-    <Post />
-    <Post />
-    <Post />
+    <Post :게시물="게시물[i]" v-for="(a,i) in 게시물" :key="i" />
   </div>
 </template>
 <script>
@@ -12,7 +9,13 @@
     name: 'Container',
     components: {
       Post
-    }
+    },
+    props: {
+      게시물: {
+        type: Array,
+        default: () => []
+      }
+    },
   }
 </script>
 <style>

@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container @인스타디비="인스타디비들" />
+  <Container :게시물="게시물" />
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -21,7 +21,7 @@
 
 <script>
 import Container from './layout/Container.vue';
-import 인스타디비들 from './assets/postData.js';
+import postData from './assets/postData.js';
 export default {
   name: 'App',
   components: {
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      postData: 인스타디비들
+      게시물: postData
     };
   },
 }
