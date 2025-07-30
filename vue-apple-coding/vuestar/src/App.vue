@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :넘겨게시물="게시물들" :postRealStep="realStep" />
+  <Container :넘겨게시물="게시물들" v-model:postRealStep="realStep" />
   
   <button @click="more">더보기</button>
 
@@ -44,7 +44,7 @@ export default {
       게시물들: postData,
       더보기: 0,
       // step : 0,
-      realStep : 1,
+      realStep : 0,
     };
   },
   methods: {
