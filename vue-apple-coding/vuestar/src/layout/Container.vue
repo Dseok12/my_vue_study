@@ -1,7 +1,31 @@
 <template>
-  <div>
+  <button @click="postRealStep = 0">포스트</button>
+  <button @click="postRealStep = 1">필터</button>
+  <button @click="postRealStep = 2">글쓰기</button>
+
+  <div v-if="postRealStep == 0"">
     <Post :또넘겨게시물="넘겨게시물[i]" v-for="(a,i) in 넘겨게시물" :key="i" />
   </div>
+  <div v-if="postRealStep == 1"">
+    <!-- 필터선택페이지 -->
+    <div class="upload-image"></div>
+    <div class="filters">
+      <div class="filter-1"></div>
+      <div class="filter-1"></div>
+      <div class="filter-1"></div>
+      <div class="filter-1"></div>
+      <div class="filter-1"></div>
+    </div>
+  </div>
+
+  <div v-if="postRealStep ==2">
+    <!-- 글작성페이지 -->
+    <div class="upload-image"></div>
+    <div class="write">
+      <textarea class="write-box">write!</textarea>
+    </div>
+  </div>
+
 </template>
 <script>
   import Post from '../components/Post.vue';
@@ -13,6 +37,9 @@
     props: {
       넘겨게시물: {
         type: Array,
+      },
+      postRealStep: {
+        type: Number
       }
     },
   }
