@@ -1,15 +1,16 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li>Cancel</li>
+      <li @click="realStep--">Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li>Next</li>
+      <li v-if="realStep == 1" @click="realStep++">Next</li>
+      <li v-if="realStep == 2" @click="publish">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :넘겨게시물="게시물들" v-model:postRealStep="realStep" />
+  <Container @write="작성한글 = $event" :넘겨이미지="이미지" :넘겨게시물="게시물들" v-model:postRealStep="realStep" />
   
   <button @click="more">더보기</button>
 
@@ -45,6 +46,7 @@ export default {
       더보기: 0,
       // step : 0,
       realStep : 0,
+      이미지: ''
     };
   },
   methods: {
@@ -63,8 +65,22 @@ export default {
       let imgUrl = URL.createObjectURL(파일[0]);
       console.log(파일)
       console.log(imgUrl)
+      this.이미지 = imgUrl;
       this.step++;
-      console.log(step)
+    },
+    publish() {
+      var 내게시물 = {
+        name: "Kim Hyun",
+        userImage: "https://picsum.photos/100?random=3",
+        postImage: this.이미지,
+        likes: 36,
+        date: "May 15",
+        liked: false,
+        content: this.작성한글,
+        filter: "perpetua"
+      }
+      this.게시물.unshift(내게시물);
+      this.step = 0;
     }
   }
 }
