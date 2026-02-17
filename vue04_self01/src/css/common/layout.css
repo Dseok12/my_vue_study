@@ -1,1 +1,2 @@
 .AllApp{background-color: #fff;}
+.AllApp [class$="__inner"]{width: calc(100% - 20%);margin: 0 auto;}
