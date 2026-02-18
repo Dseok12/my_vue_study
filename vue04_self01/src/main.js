@@ -1,25 +1,19 @@
 // src/main.js
+import { createApp } from 'vue';
+import App from './App.vue';
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import '@css/basic/reset.css';
+import { router } from './routers/router';
 
-import '@css/basic/reset.css'
+// Swiper 플러그인 (전역 관리)
+import SwiperPlugin from './plugins/swiper';
 
-import { router } from './routers/router'
+// 전역 rwdImg 로드
+import './plugins/rwdImageMaps.min.js';
 
-// Swiper
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
-import 'swiper/css'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(router);
+app.use(SwiperPlugin);
 
-// 🔹 전역 컴포넌트 등록
-app.component('Swiper', Swiper)
-app.component('SwiperSlide', SwiperSlide)
-
-// 🔹 플러그인 등록
-app.use(router)
-
-// 🔹 마운트
-app.mount('#app')
+app.mount('#app');
