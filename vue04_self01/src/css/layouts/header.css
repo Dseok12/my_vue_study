@@ -26,9 +26,9 @@
 
 .CommonGnbSection--login__section{display: flex;align-items: center;justify-content: flex-end; gap: 10px;position: relative;}
 
-.CommonGnbSection--sat-dday{font-size: 14px;color: #999;}
+.CommonGnbSection--sat-dday{display: flex;align-items: center;justify-content: center; font-size: 14px;color: #999;}
 .CommonGnbSection--sat-dday::after{content: '';display: inline-block;width: 1px;height: 14px;background-color: #ccc;margin-left: 10px;}
-.CommonGnbSection--sat-dday__value{font-weight: bold;color: #529ff0;letter-spacing: 0px;}
+.CommonGnbSection--sat-dday__value{display: inline-block; font-weight: bold;color: #529ff0;margin-left: 5px;}
 
 .CommonGnbSection--login__box{display: flex;align-items: center;justify-content: center; gap: 10px;}
 .CommonGnbSection--login__box::after{content: '';display: inline-block;width: 1px;height: 14px;background-color: #ccc;margin-left: 0px;}
