@@ -1,18 +1,18 @@
 <template>
   <div class="AllApp">
-    <GradeHeader @change-grade="handleChangeGrade" />
+    <TopGradeHeader @change-grade="handleChangeGrade" />
+    <CommonGnbSection :grade="selectedGradeLabel" />
 
-    <!-- 확인용 UI (원하면 삭제 가능) -->
-    <div style="padding: 20px;">
-      <strong>선택된 학년:</strong>
-      <span>{{ selectedGradeLabel }}</span>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import GradeHeader from './components/header/GradeHeader.vue'
+import TopGradeHeader from './components/header/TopGradeHeader.vue';
+
+import { router } from './routers/router.js';
+import CommonGnbSection from './components/header/CommonGnbSection.vue';
 
 const selectedGradeLabel = ref('')
 

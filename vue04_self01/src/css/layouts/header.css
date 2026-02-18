@@ -1,9 +1,48 @@
+/* TopGradeHeader 영역 시작 */
 .header-grade{background-color: #f5f5f5;}
 .header-grade__inner{display: flex;align-items: center;justify-content: space-between;}
 
 .header-grade__list{display: flex;align-items: center;justify-content: center;}
-.header-grade__list .header-grade__item{width: 80px;height: 44px;text-align: center;line-height: 44px;border: 1px solid #ccc;border-top: none;border-bottom: none;border-right: none;}
+.header-grade__list .header-grade__item{width: 80px;height: 44px;text-align: center;line-height: 44px;border: 1px solid #e5e5e5;border-top: none;border-bottom: none;border-right: none;}
 .header-grade__list .header-grade__item.on{background-color: #fff;}
-.header-grade__list .header-grade__item:last-child {border-right: 1px solid #ccc;}
+.header-grade__list .header-grade__item:last-child {border-right: 1px solid #e5e5e5;}
 .header-grade__list .header-grade__item .header-grade__link{color: #aeaeae;display: block;width: 100%;height: 100%;}
-.header-grade__list .header-grade__item.on .header-grade__link{color: #057eff;}
+.header-grade__list .header-grade__item.on .header-grade__link{color: #057eff;font-weight: bold;}
+
+.header-grade__banner {height: 40px;overflow: hidden;}
+.header-grade__banner-swiper {height: 100%;}
+.header-grade__banner-slide {height: 44px;display: flex !important;align-items: center;justify-content: center;}
+.header-grade__banner-link {display: flex; align-items: center;justify-content: center; width: 100%;font-size: 14px;padding: 0px;color: #333;text-decoration: none;}
+.header-grade__banner-link:hover {color: #00ba91;}
+
+.header-grade__banner-label{display: inline-block; background-color: #00b050;color: #fff; padding: 3px 4px;}
+.header-grade__banner-infotext{display: inline-block; margin-left: 8px; color: #333;}
+/* TopGradeHeader 영역 끝 */
+
+
+/* CommonGnbSection 영역 시작 */
+.CommonGnbSection{height: 131px; border-bottom: 1px solid #eee;}
+.CommonGnbSection__inner{padding-top: 10px;}
+
+.CommonGnbSection--login__section{display: flex;align-items: center;justify-content: flex-end; gap: 10px;position: relative;}
+
+.CommonGnbSection--sat-dday{font-size: 14px;color: #999;}
+.CommonGnbSection--sat-dday::after{content: '';display: inline-block;width: 1px;height: 14px;background-color: #ccc;margin-left: 10px;}
+.CommonGnbSection--sat-dday__value{font-weight: bold;color: #529ff0;letter-spacing: 0px;}
+
+.CommonGnbSection--login__box{display: flex;align-items: center;justify-content: center; gap: 10px;}
+.CommonGnbSection--login__box::after{content: '';display: inline-block;width: 1px;height: 14px;background-color: #ccc;margin-left: 0px;}
+.CommonGnbSection--login__box > li{}
+.CommonGnbSection--login__box > li > a{color: #999;font-size: 14px;}
+.CommonGnbSection--login__box > li > a:hover{text-decoration: underline;text-underline-position: under;}
+
+.CommonGnbSection--info__section{display: flex;align-items: center;justify-content: center; gap: 10px;}
+.CommonGnbSection--info__section > li{}
+.CommonGnbSection--info__section > li > a{color: #999;font-size: 14px;}
+.CommonGnbSection--info__section > li > a:hover{text-decoration: underline;text-underline-position: under;}
+
+.CommonGnbSection--evt__section{padding-top: 31px; display: grid;grid-template-columns: 1fr 1fr 1fr;}
+.CommonGnbSection--logo{width: 184px;margin: 0 auto;}
+.CommonGnbSection--evt__box{width: 224px;}
+
+/* CommonGnbSection 영역 끝 */
