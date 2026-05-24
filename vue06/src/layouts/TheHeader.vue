@@ -43,7 +43,9 @@
             </li>
           </ul>
           <div class="d-flex">
-            <button class="btn btn-outline-light" type="button">글쓰기</button>
+            <button class="btn btn-outline-light" type="button" @click="goPage">
+              글쓰기
+            </button>
           </div>
         </div>
       </div>
@@ -51,6 +53,13 @@
   </header>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const goPage = () => {
+  router.push({
+    name: "PostCreate",
+  });
+};
 </script>
