@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import PostCreateView from "@/views/posts/PostCreateView.vue";
@@ -76,7 +80,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/"),
+  history: createWebHistory("/"), // SEO에 영향을 미치지 않음. 하지만 배포할 때 다른 설정을 해줘야하며, 서버 환경에 맞게 설정을 하여 배포해야함.
+  // history: createWebHashHistory(), SEO에 나쁜 영향을 미침. 하나의 index.html파일만 건내주기 때문에 구글이나 네이버에서 웹사이트를 수집 할 수 없음.
   routes,
 });
 
