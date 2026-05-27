@@ -10,8 +10,8 @@ const posts = [
   { id: 6, title: "제목6", content: "내용6", createdAt: "2026-05-15" },
 ];
 
-export function getPosts() {
-  return axios.get("http://localhost:5000/posts");
+export function getPosts(params) {
+  return axios.get("http://localhost:5000/posts", { params });
 }
 
 export function getPostById(id) {
