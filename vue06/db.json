@@ -13,10 +13,9 @@
       "createdAt": "2026-05-25"
     },
     {
-      "id": 3,
       "title": "제목3",
-      "content": "내용3",
-      "createdAt": "2026-05-25"
+      "content": "내용3수정이 되었습니다",
+      "id": 3
     },
     {
       "id": 4,
@@ -48,6 +47,11 @@
       "content": "내용8",
       "createdAt": "2026-05-25"
     },
-    { "id": 9, "title": "제목9", "content": "내용9", "createdAt": "2026-05-25" }
+    {
+      "id": 9,
+      "title": "제목9",
+      "content": "내용9",
+      "createdAt": "2026-05-25"
+    }
   ]
 }
