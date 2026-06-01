@@ -6,6 +6,7 @@ import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  // mode: "development / production",
   define: {
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "false",
   },

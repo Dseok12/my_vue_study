@@ -11,3 +11,8 @@ const app = createApp(App);
 
 app.use(router);
 app.mount("#app");
+
+// console.log("Mode:", import.meta.env.MODE);
+// console.log("BASE_URL:", import.meta.env.BASE_URL);
+// console.log("PROD:", import.meta.env.PROD);
+// console.log("DEV:", import.meta.env.VITE_APP_API_URL);

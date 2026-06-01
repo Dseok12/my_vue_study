@@ -37,10 +37,10 @@ import { useRouter } from "vue-router";
 import { getPostById } from "@/api/posts";
 import { defineProps } from "vue";
 import { deletePost } from "@/api/posts";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const props = defineProps({
-  id: Number,
+  id: String,
 });
 const router = useRouter();
 /**
@@ -71,7 +71,16 @@ const setPost = ({ title, content, createdAt }) => {
   post.value.createdAt = createdAt;
 };
 
-fetchPost();
+// 수정: props.id가 변경될 때마다 fetchPost를 호출하도록 변경
+watch(
+  () => props.id,
+  (newId) => {
+    if (newId) {
+      fetchPost();
+    }
+  },
+  { immediate: true },
+); // immediate: true를 주면 컴포넌트 로드 시 즉시 실행
 /**
  * =========================== 데이터 등록 ===========================
  */
