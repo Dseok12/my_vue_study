@@ -40,7 +40,7 @@ import { deletePost } from "@/api/posts";
 import { ref, watch } from "vue";
 
 const props = defineProps({
-  id: String,
+  id: [String, Number],
 });
 const router = useRouter();
 /**
