@@ -18,6 +18,7 @@
         <button class="btn btn-primary">수정</button>
       </template>
     </PostForm>
+    <AppAlert :show="showAlert" :msg="alertMsg" :type="alertType" />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { getPostById, updatePost } from "@/api/posts";
 import PostForm from "@/components/posts/PostForm.vue";
+import AppAlert from "@/components/AppAlert.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -62,9 +64,12 @@ fetchPost();
 const edit = async () => {
   try {
     await updatePost(id, { ...form.value });
+    // 아래 한줄 코드 설명 : 수정이 완료되면 게시글목록으로 넘어가기
     router.push({ name: "PostDetail", params: { id } });
+    vAlert("수정이 완료되었습니다!", "success");
   } catch (err) {
     console.error(err);
+    vAlert("네트워크 오류");
   }
 };
 
@@ -75,6 +80,19 @@ const goDetailPate = () =>
       id,
     },
   });
+
+// alert
+const showAlert = ref(false);
+const alertMsg = ref("");
+const alertType = ref("");
+const vAlert = (msg, type = "error") => {
+  showAlert.value = true;
+  alertMsg.value = msg;
+  alertType.value = type;
+  setTimeout(() => {
+    showAlert.value = false;
+  }, 1000);
+};
 </script>
 
 <style lang="scss" scoped></style>
