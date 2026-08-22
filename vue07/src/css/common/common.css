@@ -1,0 +1,5 @@
+.AllWrap{width: 100%;}
+
+/* 클래스명이 --inner 로 끝나는 요소 공통 (header--inner, content--inner ...) */
+[class$="--inner"],
+[class*="--inner "]{width: 100%;max-width: 1200px;margin: 0 auto;}
