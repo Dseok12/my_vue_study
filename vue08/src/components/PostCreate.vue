@@ -9,7 +9,21 @@
 <script>
 import { ref } from 'vue';
 export default {
-  emits: ['createPost'],
+  // emits: ['createPost'],
+  emtis : {
+    /*
+    유효성 체크가 없으면 null이 넘어가서 콘솔창에 경고가 뜬다. (vue warn) 이벤트가 발생이 되긴 된다.
+    createPost: null,
+    */
+    createPost: (newTitle) => {
+      console.log('validator : ', newTitle);
+      if (!newTitle){
+        return false;
+        // 콘솔창에 경고가 뜬다. (vue warn) 이벤트가 발생이 되긴 된다.
+      }
+      return true;
+    }
+  },
   setup (props, {emit}) {
     // context.emit()
     const title = ref('');
