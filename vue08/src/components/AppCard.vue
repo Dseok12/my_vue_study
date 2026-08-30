@@ -6,7 +6,7 @@
       <span class="badge text-bg-secondary">{{ typeName }}</span>
       <h5 class="card-title mt-2">{{ title }}</h5>
       <p class="card-text">{{ contents }}</p>
-      <a href="#" :class="isLikeClass" @click="toggleLike">좋아요</a>
+      <a href="#" :class="isLikeClass" @click.prevent="toggleLike">좋아요</a>
       <!--
       <a v-if="isLike" href="#" class="btn btn-danger mt-2">좋아요</a>
       <a v-else href="#" class="btn btn-outline-danger mt-2">좋아요</a>

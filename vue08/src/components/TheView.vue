@@ -22,6 +22,7 @@
           -->
         </div>
       </div>
+      <TheTabRow :tabs="['tab1', 'tab2', 'tab3']"></TheTabRow>
     </div>
   </main>
 </template>
@@ -30,10 +31,12 @@
 import { reactive } from 'vue';
 import AppCard from './AppCard.vue';
 import PostCreate from './PostCreate.vue';
+import TheTabRow from './TheTabRow.vue';
 export default {
   components: {
     AppCard,
-    PostCreate
+    PostCreate,
+    TheTabRow,
   },
   setup() {
     const obj = reactive({
