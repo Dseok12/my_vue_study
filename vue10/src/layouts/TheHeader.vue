@@ -24,6 +24,11 @@
                 >About</RouterLink
               >
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" active-class="active" to="/register"
+                >Register</RouterLink
+              >
+            </li>
           </ul>
         </div>
       </div>
