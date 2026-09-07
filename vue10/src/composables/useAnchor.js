@@ -21,3 +21,5 @@ export function useAnchor(targetRefs = {}) {
     if (newVal) runScroll(newVal)
   })
 }
+
+// ?anchor=eventArea01 여기서 "anchor"는 어떻게 바꾸는거야?

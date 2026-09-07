@@ -45,6 +45,8 @@
       <h2>Default Anchor Area (기본 영역)</h2>
       <p>기본 앵커 영역입니다.</p>
     </section>
+    <div class="dummy-space">스크롤 테스트를 위한 여백 영역</div>
+    <div class="dummy-space">스크롤 테스트를 위한 여백 영역</div>
   </div>
 </template>
 
